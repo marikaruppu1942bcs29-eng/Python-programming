@@ -1,0 +1,7 @@
+import set_module
+s1=set(map(int,input("enter elements of set1(space_seperated):").split()))
+s2=set(map(int,input("enter elements of set2(space_seperated):").split()))
+print("union:",set_module.sunion(s1,s2))
+print("intersection:",set_module.sintersection(s1,s2))
+print("difference(s1-s2):",set_module.sdifference(s1,s2))
+print("symmetric difference:",set_module.ssymmetricdiff(s1,s2))
