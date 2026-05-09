@@ -1,0 +1,13 @@
+class student:
+   def __init__ (self,name,roll,cgpa):
+      self.name=name
+      self.roll=roll
+      self.cgpa=cgpa
+   def display(self):
+      print("student name:",self.name)
+      print("roll number:",self.roll)
+      print("cgpa:",self.cgpa)
+name=input("enter name:")
+roll=int(input("enter roll number:"))
+cgpa=float(input("enter cgpa:"))
+s=student(name,roll,cgpa
