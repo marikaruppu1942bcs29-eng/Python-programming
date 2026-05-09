@@ -1,0 +1,27 @@
+class employee:
+   def __init__ (self,emp_id,name,basic):
+      self.emp_id=emp_id
+      self.name=name
+      self.basic=basic
+   def calculate_salary(self):
+      self.da=0.10*self.basic
+      self.hra=0.20*self.basic
+      self.pf=0.05*self.basic
+      self.gross=self.basic+self.da+self.hra
+      self.net=self.gross-self.pf
+   def display(self):
+      print("\n____employee payroll details_____")
+      print("employee id:",self.emp_id)
+      print("name:",self.name)
+      print("basic salary:",self.basic)
+      print("da(10)%:",self.da)
+      print("hra(20)%:",self.hra)
+      print("pf(5% deduction):",self.pf)
+      print("gross salary:",self.gross)
+      print("net salary:",self.net)
+emp_id=input("enter employee id:")
+name=input("enter employee name:")
+basic=float(input("enter basic salary:"))
+emp=employee(emp_id,name,basic)
+emp.calculate_salary()
+emp.display()
