@@ -1,0 +1,7 @@
+salary= float(input("enter monthly salary:"))
+days= int(input("enter number of days absent:"))
+pds= salary/30
+deduction= pds* days
+fs= salary - deduction
+print("deduction amount:",deduction)
+print("final salary after deduction:",fs)
