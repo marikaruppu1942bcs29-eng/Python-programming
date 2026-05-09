@@ -1,0 +1,25 @@
+class invalid_error(Exception):
+    pass
+class AccountlockedError(Exception):
+    pass
+class loginsystem:
+    def __init__(self):
+        self.username="admin"
+        self.password="1234"
+        self.attempts=0
+    def login(self):
+        try:
+            if self.attempts>=3:
+                raise AccountlockedError("Accout locked for security")
+            user=input("Enter your username: ")
+            pwd=input("Enter your password: ")
+            if user!=self.username or pwd!=self.password:
+                self.attempts+=1
+                raise invalid_error("Invalid username or password")
+            else:
+                print("login successful")
+                self.attempts=0
+        except (invalid_error,AccountlockedError) as e:
+            print(e)
+l=loginsystem()
+l.login()
