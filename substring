@@ -1,0 +1,5 @@
+m = input("enter the string:")
+g =len(m)
+for i in range(g):
+   for j in range ((i+1),(g+1)):
+      print(m[i:j])
