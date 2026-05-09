@@ -1,0 +1,6 @@
+import function_module
+num=int(input("enter a number:"))
+f=function_module.factors(num)
+print("factors:",f)
+pf=function_module.prime_factors(num)
+print("prime factors:",pf)
