@@ -1,0 +1,15 @@
+balance=float(input("enter initial account balance:"))
+transaction=input("enter transaction type(deposit/withdraw):")
+amount=float(input("enter transaction amount"))
+if transaction=="deposit":
+    balance=balance+amount
+    print("transaction successful")
+    print("update balance:",balance)
+elif transaction=="withdraw":
+    if amount<=balance:
+        balance=balance-amount
+        print("transaction successful")
+    else:
+        print("insufficient balance ")
+else:
+    print("invalid transaction type")
