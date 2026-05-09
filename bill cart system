@@ -1,0 +1,32 @@
+def calculate_subtotal(quantity,price):
+    return quantity*price
+def calculate_discount(total):
+    if total>3000:
+        return total*0.10
+    return 0
+def calculate_gst(amount):
+    return amount*0.15
+def display_bill(cart):
+    total=0
+    print("\n_______BILL DETAILS_______")
+    print("item\tqty\tprice\tsubtotal")
+    for item in cart:
+        name,qty,price=item
+        subtotal=calculate_subtotal(qty,price)
+        total+=subtotal
+        print(f"{name}\t{qty}\t{price}\t{subtotal}")
+        discount=calculate_discount(total)
+        gst=calculate_gst(total-discount)
+        final_amount=total-discount+gst
+        print("\nsubtotal:",total)
+        print("discount:",discount)
+        print("gst(5%):",gst)
+        print("totalamount:",final_amount)
+cart=[]
+n=int(input("enter number of items:"))
+for i in range(n):
+        name=input("enter item name:")
+        qty=int(input("enter quantity:"))
+        price=float(input("enter price:"))
+        cart.append((name,qty,price))
+display_bill(cart)
