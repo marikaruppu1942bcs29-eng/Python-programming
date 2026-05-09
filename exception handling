@@ -1,0 +1,47 @@
+class ExceptionDemo:
+    def divide(self):
+        try:
+            a = int(input("Enter first number: "))
+            b = int(input("Enter second number: "))
+            result = a / b
+            print(f"The result of {a} divided by {b} is: {result}")
+        except ZeroDivisionError:
+            print("Error: Cannot divide by zero.")
+        except ValueError:
+            print("Error: Please enter numeric values.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+
+    def access_list(self):
+        try:
+            my_list = [10, 20, 30, 40, 50]
+            print("List:", my_list)
+            index = int(input("Enter index: "))
+            print("Element at index", index, ":", my_list[index])
+        except IndexError:
+            print("Error: Index out of range.")
+        except ValueError:
+            print("Error: Please enter a numeric index.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+
+
+    def access_dict(self):
+        try:
+            my_dict = {"name": "priya", "age": 17, "course": "python"}
+            print("Dictionary keys:", list(my_dict.keys()))
+            key = input("Enter key: ")
+            print("Value:", my_dict[key])
+        except KeyError:
+            print("Error: Key not found in dictionary.")
+        except Exception as e:
+            print(f"An unexpected error occurred: {e}")
+
+if __name__ == "__main__":
+    obj = ExceptionDemo()
+    print("- --- Division - ---")
+    obj.divide()
+    print("- --- ListAccess - ---")
+    obj.access_list()
+    print("- --- Dictionaryaccess - ---")
+    obj.access_dict()
