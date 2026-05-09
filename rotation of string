@@ -1,0 +1,6 @@
+sa= input("enter first string:")
+sb= input("enter second string:")
+if len(sa)== len(sb) and sb in (sa + sa):
+    print(sb,"is a rotation of",sa)
+else:
+    print(sb,"is not a rotation of",sa)
