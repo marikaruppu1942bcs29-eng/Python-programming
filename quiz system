@@ -1,0 +1,27 @@
+class Quiz:
+    def __init__(self, questions):
+        self.questions = questions
+        self.user_answers = []
+        self.score = 0
+
+    def ask_question(self, question):
+        print(question['text'])
+        for i, option in enumerate(question['options'], 1):
+            print(f"{i}. {option}")
+        answer = int(input("Enter your choice number: "))
+        self.user_answers.append(answer)
+        if question['answer'] == answer:
+            self.score += 1
+
+    def start(self):
+        for question in self.questions:
+            self.ask_question(question)
+        print(f"Your total score is: {self.score}/{len(self.questions)}")
+
+questions = [
+    {'text': "What is 2 + 2?", 'options': [3,4,5], 'answer': 2},
+    {'text': "Capital of India?", 'options': ["Delhi","Mumbai","Chennai"], 'answer': 1}
+]
+
+quiz = Quiz(questions)
+quiz.start()
