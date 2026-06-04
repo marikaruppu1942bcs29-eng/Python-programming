@@ -1,0 +1,11 @@
+phone_book={}
+n=int(input("enter number of entries:"))
+for i in range(n):
+  number=input("enter mobile number:")
+  name=input("enter person name:")
+  phone_book[number]=name
+search=input("enter mobile number to search:")
+if search in phone_book:
+  print("name:",phone_book[search])
+else:
+  print("mobile number not found")
