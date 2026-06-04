@@ -1,0 +1,60 @@
+class Vehicle:
+    def __init__(self):
+        self.make = ""
+        self.year = 0
+        self.colour = ""
+
+    def getDetails(self):
+        self.make = input("Enter vehicle make: ")
+        self.year = int(input("Enter vehicle year: "))
+        self.colour = input("Enter vehicle colour: ")
+
+    def display_info(self):
+        print("\nVehicle Details:")
+        print("Make:", self.make)
+        print("Year:", self.year)
+        print("Colour:", self.colour)
+
+class Car(Vehicle):
+    def __init__(self):
+        super().__init__()
+        self.model = ""
+        self.capacity = 0
+
+    def getCarDetails(self):
+        super().getDetails()
+        self.model = input("Enter car model: ")
+        self.capacity = int(input("Enter seating capacity: "))
+
+    def Display_car(self):
+        super().display_info()
+        print("Model:", self.model)
+        print("Seating Capacity:", self.capacity)
+
+
+class Bike(Vehicle):
+    def __init__(self):
+        super().__init__()
+        self.type = ""
+        self.mileage = 0
+
+    def getBikeDetails(self):
+        super().getDetails()
+        self.type = input("Enter bike type (e.g., sports, cruiser): ")
+        self.mileage = float(input("Enter mileage (km/l): "))
+
+    def Display_bike(self):
+        super().display_info()
+        print("Type:", self.type)
+        print("Mileage:", self.mileage)
+
+
+print("----- Car Details -----")
+car = Car()
+car.getCarDetails()
+car.Display_car()
+
+print("\n----- Bike Details -----")
+bike = Bike()
+bike.getBikeDetails()
+bike.Display_bike()
