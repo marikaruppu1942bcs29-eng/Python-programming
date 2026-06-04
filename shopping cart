@@ -1,0 +1,79 @@
+class Product:
+    def __init__(self):
+        self.id = 0
+        self.name = ""
+        self.price = 0.0
+
+    def GetDetails(self):
+        self.id = int(input("Enter Product ID: "))
+        self.name = input("Enter Product Name: ")
+        self.price = float(input("Enter Product Price: "))
+
+    def add_to_cart(self, cart):
+        cart.append(self)
+
+    def display(self):
+        print(f"ID: {self.id}, Name: {self.name}, Price: {self.price}")
+
+
+class Electronics(Product):
+    def __init__(self):
+        super().__init__()
+        self.name_of_product = ""
+        self.brand = ""
+        self.warranty = ""
+
+    def GetElectronicsDetails(self):
+        super().GetDetails()
+        self.name_of_product = input("Enter Electronics Product Name: ")
+        self.brand = input("Enter Brand: ")
+        self.warranty = input("Enter Warranty period: ")
+
+    def display(self):
+        super().display()
+        print(f"Product Name: {self.name_of_product}, Brand: {self.brand}, Warranty: {self.warranty}")
+
+
+class Clothing(Product):
+    def __init__(self):
+        super().__init__()
+        self.type = ""
+        self.size = ""
+        self.color = ""
+
+    def GetClothDetails(self):
+        super().GetDetails()
+        self.type = input("Enter Clothing Type: ")
+        self.size = input("Enter Size: ")
+        self.color = input("Enter Color: ")
+
+    def display(self):
+        super().display()
+        print(f"Type: {self.type}, Size: {self.size}, Color: {self.color}")
+
+
+def display_cart(cart):
+    print("\n----- Shopping Cart -----")
+    total = 0
+    for item in cart:
+        item.display()
+        total += item.price
+        print("----------------------")
+    print(f"Total Price: {total}")
+
+
+cart = []
+
+print("Enter Electronics Details:")
+e = Electronics()
+e.GetElectronicsDetails()
+e.add_to_cart(cart)
+
+
+print("\nEnter Clothing Details:")
+c = Clothing()
+c.GetClothDetails()
+c.add_to_cart(cart)
+
+
+display_cart(cart)
