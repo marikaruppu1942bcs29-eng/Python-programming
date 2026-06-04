@@ -1,0 +1,71 @@
+class Employee:
+    def __init__(self):
+        self.emp_id = 0
+        self.name = ""
+        self.salary = 0
+        self.percentage = 0.0
+
+    def get_employee(self):
+        self.emp_id = int(input("Enter ID: "))
+        self.name = input("Enter Name: ")
+        self.salary = float(input("Enter Salary: "))
+        self.percentage = float(input("Enter Bonus %: "))
+
+    def calculate_bonus(self):
+        return (self.salary * self.percentage) / 100
+
+
+class Manager(Employee):
+    def __init__(self):
+        super().__init__()
+        self.department = ""
+        self.team_size = 0
+        self.allowance = 0
+
+    def manager_details(self):
+        self.get_employee()
+        self.department = input("Enter Department: ")
+        self.team_size = int(input("Enter Team Size: "))
+        self.allowance = float(input("Enter Allowance: "))
+
+    def printManager(self):
+        print("\n--- Manager Details ---")
+        print("ID:", self.emp_id)
+        print("Name:", self.name)
+        print("Salary:", self.salary)
+        print("Department:", self.department)
+        print("Team Size:", self.team_size)
+        print("Allowance:", self.allowance)
+        print("Bonus:", self.calculate_bonus())
+
+
+class Developer(Employee):
+    def __init__(self):
+        super().__init__()
+        self.project = ""
+        self.experience = 0
+
+    def developer_details(self):
+        self.get_employee()
+        self.project = input("Enter Project: ")
+        self.experience = float(input("Enter Experience (years): "))
+
+    def printDeveloper(self):
+        print("\n--- Developer Details ---")
+        print("ID:", self.emp_id)
+        print("Name:", self.name)
+        print("Salary:", self.salary)
+        print("Project:", self.project)
+        print("Experience:", self.experience)
+        print("Bonus:", self.calculate_bonus())
+
+
+print("Enter Manager Details:")
+m = Manager()
+m.manager_details()
+m.printManager()
+
+print("\nEnter Developer Details:")
+d = Developer()
+d.developer_details()
+d.printDeveloper(
