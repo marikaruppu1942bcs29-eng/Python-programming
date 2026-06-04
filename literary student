@@ -1,0 +1,101 @@
+class Student:
+    def __init__(self):
+        self.name = ""
+        self.roll_no = 0
+        self.test_mark = 0
+
+    def get_student(self):
+        self.name = input("Enter Name: ")
+        self.roll_no = int(input("Enter Roll No: "))
+        self.test_mark = float(input("Enter Test Marks: "))
+
+    def total_marks(self):
+        return self.test_mark
+
+    def display(self):
+        print("\n--- Student Details ---")
+        print("Name:", self.name)
+        print("Roll No:", self.roll_no)
+        print("Test Marks:", self.test_mark)
+
+
+class Literary_Student(Student):
+    def __init__(self):
+        super().__init__()
+        self.literary_marks = 0
+
+    def get_data(self):
+        self.get_student()
+        self.literary_marks = float(input("Enter Literary Marks: "))
+
+    def total_marks(self):
+        return self.test_mark + self.literary_marks
+
+    def display(self):
+        print("\n--- Literary Student ---")
+        print("Name:", self.name)
+        print("Roll No:", self.roll_no)
+        print("Test Marks:", self.test_mark)
+        print("Literary Marks:", self.literary_marks)
+        print("Total Marks:", self.total_marks())
+
+
+class Sports_Student(Student):
+    def __init__(self):
+        super().__init__()
+        self.sports_marks = 0
+
+    def get_data(self):
+        self.get_student()
+        self.sports_marks = float(input("Enter Sports Marks: "))
+
+    def total_marks(self):
+        return self.test_mark + self.sports_marks
+
+    def display(self):
+        print("\n--- Sports Student ---")
+        print("Name:", self.name)
+        print("Roll No:", self.roll_no)
+        print("Test Marks:", self.test_mark)
+        print("Sports Marks:", self.sports_marks)
+        print("Total Marks:", self.total_marks())
+
+
+class Lit_Sport_Student(Student):
+    def __init__(self):
+        super().__init__()
+        self.literary_marks = 0
+        self.sports_marks = 0
+
+    def get_data(self):
+        self.get_student()
+        self.literary_marks = float(input("Enter Literary Marks: "))
+        self.sports_marks = float(input("Enter Sports Marks: "))
+
+    def total_marks(self):
+        return self.test_mark + self.literary_marks + self.sports_marks
+
+    def display(self):
+        print("\n--- Literary + Sports Student ---")
+        print("Name:", self.name)
+        print("Roll No:", self.roll_no)
+        print("Test Marks:", self.test_mark)
+        print("Literary Marks:", self.literary_marks)
+        print("Sports Marks:", self.sports_marks)
+        print("Total Marks:", self.total_marks())
+
+
+s1 = Literary_Student()
+print("\nEnter Literary Student Details:")
+s1.get_data()
+s1.display()
+
+s2 = Sports_Student()
+print("\nEnter Sports Student Details:")
+s2.get_data()
+s2.display()
+
+s3 = Lit_Sport_Student()
+print("\nEnter Literary + Sports Student Details:")
+s3.get_data()
+s3.display()
