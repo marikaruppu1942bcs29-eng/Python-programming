@@ -1,0 +1,24 @@
+import zipfile
+import os
+
+def zip_folder(folder_name, zip_name):
+    with zipfile.ZipFile(zip_name, 'w', zipfile.ZIP_DEFLATED) as zipf:
+
+        for root, dirs, files in os.walk(folder_name):
+            for file in files:
+                file_path = os.path.join(root, file)
+
+
+                zipf.write(file_path)
+
+    print("Folder zipped successfully.")
+
+def unzip_file(zip_name, extract_path):
+    with zipfile.ZipFile(zip_name, 'r') as zipf:
+        zipf.extractall(extract_path)
+
+    print("Files extracted successfully.")
+
+zip_folder("TextFiles", "compressed.zip")
+
+unzip_file("compressed.zip", "ExtractedFiles")
