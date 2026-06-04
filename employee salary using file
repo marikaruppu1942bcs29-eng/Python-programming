@@ -1,0 +1,26 @@
+import csv
+
+def calculate_salary(basic_pay):
+    hra = 0.20 * basic_pay
+    da = 0.10 * basic_pay
+    total_salary = basic_pay + hra + da
+    return total_salary
+
+with open("employee.csv", "r") as file:
+    reader = csv.DictReader(file)
+
+    print("Employee Salary Details")
+    print("------------------------")
+
+    for row in reader:
+        emp_id = row["EmpID"]
+        name = row["Name"]
+        basic_pay = float(row["BasicPay"])
+
+        total_salary = calculate_salary(basic_pay)
+
+        print("Employee ID :", emp_id)
+        print("Name        :", name)
+        print("Basic Pay   :", basic_pay)
+        print("Total Salary:", total_salary)
+        print()
