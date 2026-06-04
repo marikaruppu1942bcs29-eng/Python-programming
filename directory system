@@ -1,0 +1,9 @@
+directory={}
+n=int(input("enter number of contacts:"))
+for i in range(n):
+   name=input("enter name:")
+   number=input("enter phone number:")
+   directory[name]=number
+print("\n telephone directory")
+for name,number in directory.items():
+   print(name,":",number)
