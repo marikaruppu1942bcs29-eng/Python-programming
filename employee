@@ -1,0 +1,17 @@
+employees=((101,"ram",45000),(102,"ravi",60000),(103,"sita",55000),(104,"john",30000))
+print("employee details")
+for emp in employees:
+   print(emp)
+search_id=int(input("enter employee id to search:"))
+for emp in employees:
+   if emp[0]==search_id:
+      print("employee found:",emp)
+highest=employees[0]
+for emp in employees:
+   if emp[2]>highest[2]:
+      highest=emp
+print("employees with highest salary:",highest)
+print("employees with salary>50000")
+for emp in employees:
+   if emp[2]>50000:
+      print(emp)
