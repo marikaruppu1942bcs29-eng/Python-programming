@@ -1,0 +1,16 @@
+import math
+
+n = int(input("Enter n value: "))
+r = int(input("Enter r value: "))
+
+# Ensure valid input so it doesn't throw a ValueError
+if n >= r >= 0:
+    # Math library only has math.comb, so we calculate nPr manually
+    nCr = math.comb(n, r)
+    nPr = math.perm(n, r)
+
+    print("nCr =", nCr)
+    print("nPr =", nPr)
+else:
+    print("Invalid input. Please ensure n >= r >= 0.")
+
